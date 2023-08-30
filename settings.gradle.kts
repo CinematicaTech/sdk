@@ -21,4 +21,3 @@ rootProject.name = "cinematica-sdk"
 
 include(":sdk")
 
-includeBuild("build-logic/publish-library-plugin")

@@ -1,9 +1,23 @@
-@Suppress("DSL_SCOPE_VIOLATION") // TODO: Remove once KTIJ-19369 is fixed
 plugins {
-    id("java-library")
+    alias(libs.plugins.kotlin.multiplatform)
+    // alias(libs.plugins.library.publish)
+    id("me.him188.maven-central-publish") version "1.0.0-dev-1"
 }
 
-java {
-    sourceCompatibility = JavaVersion.VERSION_1_7
-    targetCompatibility = JavaVersion.VERSION_1_7
+kotlin {
+    jvm()
+
+    explicitApi()
+}
+
+group = "com.cinematica.backend"
+
+dependencies {
+    commonMainImplementation(libs.kotlinx.datetime)
+    commonMainImplementation(libs.kotlinx.coroutines)
+}
+
+mavenCentralPublish {
+    singleDevGithubProject("sliderzxc", "maven-central-publish")
+    licenseApacheV2()
 }
