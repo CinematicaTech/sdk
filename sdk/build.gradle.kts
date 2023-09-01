@@ -1,7 +1,6 @@
 plugins {
     alias(libs.plugins.kotlin.multiplatform)
-    // alias(libs.plugins.library.publish)
-    id("me.him188.maven-central-publish") version "1.0.0-dev-1"
+    id("maven-publish")
 }
 
 kotlin {
@@ -10,14 +9,29 @@ kotlin {
     explicitApi()
 }
 
-group = "com.cinematica.backend"
+group = "com.cinematica.sdk"
 
 dependencies {
     commonMainImplementation(libs.kotlinx.datetime)
     commonMainImplementation(libs.kotlinx.coroutines)
 }
 
-mavenCentralPublish {
-    singleDevGithubProject("sliderzxc", "maven-central-publish")
-    licenseApacheV2()
+publishing {
+    publications {
+        create<MavenPublication>("maven") {
+            groupId = "com.cinematica"
+            artifactId = "sdk"
+            version = "0.0.1"
+            from(components["kotlin"])
+        }
+    }
+    repositories {
+        maven {
+            setUrl("https://maven.pkg.jetbrains.space/vadymhrynyk/p/main/cinematica-sdk")
+            credentials {
+                username = project.findProperty("spaceUsername") as String
+                password = project.findProperty("spacePassword") as String
+            }
+        }
+    }
 }

@@ -20,4 +20,3 @@ dependencyResolutionManagement {
 rootProject.name = "cinematica-sdk"
 
 include(":sdk")
-
