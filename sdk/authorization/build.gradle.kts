@@ -1,19 +1,26 @@
 plugins {
-    alias(libs.plugins.kotlin.multiplatform)
+    alias(libs.plugins.kotlin.jvm)
+    alias(libs.plugins.kotlinx.serialization)
     id("maven-publish")
 }
 
-kotlin {
-    jvm()
+//kotlin {
+//    jvm()
+//
+//    explicitApi()
+//}
 
-    explicitApi()
-}
-
-group = "com.cinematica.sdk"
+group = "com.cinematica.sdk.authorization"
 
 dependencies {
-    commonMainImplementation(libs.kotlinx.datetime)
-    commonMainImplementation(libs.kotlinx.coroutines)
+    implementation(libs.kotlinx.datetime)
+    implementation(libs.kotlinx.coroutines)
+
+    implementation(libs.retrofit.core)
+    implementation(libs.retrofit.converter.gson)
+    implementation(libs.retrofit.logging)
+    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.3.9")
+    implementation("com.github.skydoves:retrofit-adapters-result:1.0.7")
 }
 
 publishing {

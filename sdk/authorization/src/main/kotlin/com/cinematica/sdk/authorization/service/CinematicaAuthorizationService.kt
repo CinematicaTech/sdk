@@ -1,12 +1,11 @@
-package com.cinematica.api.authorization.service
+package com.cinematica.sdk.authorization.service
 
-import com.cinematica.api.authorization.entities.authorization.AuthorizationRequest
-import com.cinematica.api.authorization.entities.authorization.AuthorizationResponse
-import com.cinematica.api.authorization.entities.state.AuthorizationStateResponse
+import com.cinematica.sdk.authorization.entities.authorization.AuthorizationRequest
+import com.cinematica.sdk.authorization.entities.authorization.AuthorizationResponse
+import com.cinematica.sdk.authorization.entities.state.AuthorizationStateResponse
 import retrofit2.Call
 import retrofit2.http.Body
 import retrofit2.http.GET
-import retrofit2.http.Headers
 import retrofit2.http.POST
 import retrofit2.http.Query
 

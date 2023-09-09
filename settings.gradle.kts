@@ -19,5 +19,8 @@ dependencyResolutionManagement {
 
 rootProject.name = "cinematica-sdk"
 
-include(":sdk")
+include(
+    ":sdk:authorization",
+)
+
 include(":api:authorization")

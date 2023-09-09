@@ -1,4 +1,4 @@
-package com.cinematica.api.authorization.entities.authorization
+package com.cinematica.sdk.authorization.entities.authorization
 
 import kotlinx.serialization.Serializable
 
