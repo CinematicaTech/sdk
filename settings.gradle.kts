@@ -22,5 +22,3 @@ rootProject.name = "cinematica-sdk"
 include(
     ":sdk:authorization",
 )
-
-include(":api:authorization")
