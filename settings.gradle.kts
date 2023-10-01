@@ -19,6 +19,9 @@ dependencyResolutionManagement {
 
 rootProject.name = "cinematica-sdk"
 
+include(":sdk")
+
 include(
-    ":sdk:authorization",
+    ":grpc-engine"
 )
+include(":grpc-engine:android")
