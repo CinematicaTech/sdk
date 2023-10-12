@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+option java_package = "com.cinematica.backend.authorization.requests";
+
+message GetAuthorizationStateRequest {
+  string emailAddress = 1;
+
+  message Response {
+    string authorizationMethod = 1;
+  }
+}
