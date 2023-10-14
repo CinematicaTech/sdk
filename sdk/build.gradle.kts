@@ -1,14 +1,15 @@
 plugins {
-    alias(libs.plugins.kotlin.jvm)
+    alias(libs.plugins.kotlin.multiplatform)
     alias(libs.plugins.kotlinx.serialization)
     id("maven-publish")
 }
 
-//kotlin {
-//    jvm()
-//
-//    explicitApi()
-//}
+kotlin {
+    jvm()
+    jvmToolchain(19)
+
+    explicitApi()
+}
 
 group = "com.cinematica.sdk.authorization"
 
