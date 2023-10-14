@@ -14,4 +14,6 @@ kotlin {
 group = "com.cinematica.sdk.authorization"
 
 dependencies {
+    commonMainImplementation(libs.kotlinx.datetime)
+    commonMainImplementation(libs.kotlinx.coroutines)
 }
