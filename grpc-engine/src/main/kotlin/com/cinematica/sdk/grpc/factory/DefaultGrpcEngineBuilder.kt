@@ -7,6 +7,7 @@ public class DefaultGrpcEngineBuilder : GrpcEngineBuilder {
     override fun createGrpcEngine(endpoint: String): ManagedChannel {
         return ManagedChannelBuilder.forTarget(endpoint)
             .useTransportSecurity()
+            .usePlaintext()
             .build()
     }
 }

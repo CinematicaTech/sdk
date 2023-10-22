@@ -22,7 +22,8 @@ import com.cinematica.backend.authorization.requests.GetAuthorizationStateReques
 import kotlin.reflect.KClass
 
 public class GrpcCinematicaRequestsEngine(
-    endpoint: String = "cinematica-server-arfeseedaa-uc.a.run.app",
+    //endpoint: String = "cinematica-server-arfeseedaa-uc.a.run.app",
+    endpoint: String = "localhost:8787",
     grpcEngineBuilder: GrpcEngineBuilder,
 ) : CinematicaRequestsEngine {
 

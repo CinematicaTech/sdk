@@ -21,7 +21,5 @@ rootProject.name = "cinematica-sdk"
 
 include(":sdk")
 
-include(
-    ":grpc-engine"
-)
+include(":grpc-engine")
 include(":grpc-engine:android")
