@@ -3,7 +3,7 @@
 package com.cinematica.sdk.grpc
 
 import com.cinematica.backend.authorization.AuthorizationServiceGrpcKt
-import com.cinematica.sdk.authorization.requests.GetAuthorizationStateRequest
+import com.cinematica.sdk.core.authorization.requests.GetAuthorizationStateRequest
 import com.cinematica.sdk.authorization.types.AuthorizationState
 import com.cinematica.sdk.common.engine.CinematicaRequestsEngine
 import com.cinematica.sdk.common.exceptions.InternalServerError
@@ -38,13 +38,13 @@ public class GrpcCinematicaRequestsEngine(
 
     public override suspend fun <T : CinematicaEntity> execute(request: CinematicaRequest<T>): Result<T> = runCatching {
         when (request) {
-            is GetAuthorizationStateRequest -> authorizationService.getAuthorizationState(
+            is com.cinematica.sdk.core.authorization.requests.GetAuthorizationStateRequest -> authorizationService.getAuthorizationState(
                 GrpcGetAuthorizationStateRequest
                     .newBuilder()
                     .setEmailAddress(request.emailAddress.string)
                     .build()
             ).let {
-                GetAuthorizationStateRequest.Result(
+                com.cinematica.sdk.core.authorization.requests.GetAuthorizationStateRequest.Result(
                     AuthorizationState(it.authorizationMethod)
                 )
             }
