@@ -6,7 +6,7 @@ import com.google.protobuf.gradle.id
 plugins {
     alias(libs.plugins.kotlin.jvm)
     alias(libs.plugins.google.protobuf)
-    //`maven-publish`
+    `maven-publish`
 }
 
 dependencies {
@@ -50,22 +50,22 @@ protobuf {
     }
 }
 
-//publishing {
-//    publications {
-//        create<MavenPublication>("maven") {
-//            groupId = "com.cinematica.sdk"
-//            artifactId = "grpc-engine"
-//            version = "0.0.1"
-//            from(components["kotlin"])
-//        }
-//    }
-//    repositories {
-//        maven {
-//            setUrl("https://maven.pkg.jetbrains.space/vadymhrynyk/p/main/cinematica")
-//            credentials {
-//                username = project.findProperty("spaceUsername") as String
-//                password = project.findProperty("spacePassword") as String
-//            }
-//        }
-//    }
-//}
+publishing {
+    publications {
+        create<MavenPublication>("maven") {
+            groupId = "com.cinematica.sdk"
+            artifactId = "grpc"
+            version = "0.0.1"
+            from(components["kotlin"])
+        }
+    }
+    repositories {
+        maven {
+            setUrl("https://maven.pkg.jetbrains.space/vadymhrynyk/p/main/cinematica-library")
+            credentials {
+                username = project.findProperty("spaceUsername") as String
+                password = project.findProperty("spacePassword") as String
+            }
+        }
+    }
+}

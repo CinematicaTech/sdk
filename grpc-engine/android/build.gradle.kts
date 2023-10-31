@@ -1,6 +1,7 @@
 plugins {
     alias(libs.plugins.android.library)
     alias(libs.plugins.kotlin.android)
+    `maven-publish`
 }
 
 android {
@@ -26,4 +27,24 @@ dependencies {
 
 kotlin {
     jvmToolchain(19)
+}
+
+publishing {
+    publications {
+        create<MavenPublication>("maven") {
+            groupId = "com.cinematica.sdk"
+            artifactId = "grpc-android"
+            version = "0.0.1"
+            from(components["kotlin"])
+        }
+    }
+    repositories {
+        maven {
+            setUrl("https://maven.pkg.jetbrains.space/vadymhrynyk/p/main/cinematica-library")
+            credentials {
+                username = project.findProperty("spaceUsername") as String
+                password = project.findProperty("spacePassword") as String
+            }
+        }
+    }
 }

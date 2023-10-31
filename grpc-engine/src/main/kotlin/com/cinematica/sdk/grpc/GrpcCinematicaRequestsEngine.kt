@@ -3,15 +3,14 @@
 package com.cinematica.sdk.grpc
 
 import com.cinematica.backend.authorization.AuthorizationServiceGrpcKt
-import com.cinematica.sdk.core.authorization.requests.GetAuthorizationStateRequest
-import com.cinematica.sdk.authorization.types.AuthorizationState
-import com.cinematica.sdk.common.engine.CinematicaRequestsEngine
-import com.cinematica.sdk.common.exceptions.InternalServerError
-import com.cinematica.sdk.common.exceptions.UnauthorizedException
-import com.cinematica.sdk.common.exceptions.UnavailableException
-import com.cinematica.sdk.common.exceptions.UnsupportedException
-import com.cinematica.sdk.common.types.CinematicaEntity
-import com.cinematica.sdk.common.types.CinematicaRequest
+import com.cinematica.sdk.core.authorization.types.AuthorizationState
+import com.cinematica.sdk.core.common.engine.CinematicaRequestsEngine
+import com.cinematica.sdk.core.common.exceptions.InternalServerError
+import com.cinematica.sdk.core.common.exceptions.UnauthorizedException
+import com.cinematica.sdk.core.common.exceptions.UnavailableException
+import com.cinematica.sdk.core.common.exceptions.UnsupportedException
+import com.cinematica.sdk.core.common.types.CinematicaEntity
+import com.cinematica.sdk.core.common.types.CinematicaRequest
 import com.cinematica.sdk.grpc.factory.GrpcEngineBuilder
 import com.cinematica.sdk.grpc.internal.mapException
 import io.grpc.Metadata

@@ -29,7 +29,7 @@ publishing {
     }
     repositories {
         maven {
-            setUrl("https://maven.pkg.jetbrains.space/vadymhrynyk/p/main/cinematica")
+            setUrl("https://maven.pkg.jetbrains.space/vadymhrynyk/p/main/cinematica-library")
             credentials {
                 username = project.findProperty("spaceUsername") as String
                 password = project.findProperty("spacePassword") as String
