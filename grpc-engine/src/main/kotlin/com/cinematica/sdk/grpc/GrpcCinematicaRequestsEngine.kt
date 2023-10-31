@@ -20,6 +20,17 @@ import kotlinx.datetime.Instant
 import com.cinematica.backend.authorization.requests.GetAuthorizationStateRequestOuterClass.GetAuthorizationStateRequest as GrpcGetAuthorizationStateRequest
 import kotlin.reflect.KClass
 
+/* todo remove it
+class AndroidGrpcEngineBuilder(private val context: Context): GrpcEngineBuilder {
+    override fun createGrpcEngine(endpoint: String): ManagedChannel {
+        return AndroidChannelBuilder.forTarget(endpoint)
+            .useTransportSecurity()
+            .context(context)
+            .build()
+    }
+}
+ */
+
 public class GrpcCinematicaRequestsEngine(
     //endpoint: String = "cinematica-server-arfeseedaa-uc.a.run.app",
     endpoint: String = "localhost:8787",
